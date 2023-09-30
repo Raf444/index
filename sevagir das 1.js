@@ -1,6 +1,10 @@
+const requestName = prompt('անուն')
+const requestDate = prompt('օր( օրինակ  13)')
+const requestMounth = prompt('ամիս (օրինակ  4)')
+
 function birthdayRemained (){
 const currentTime = new Date()
-const myBirthday = new Date(`2/3/${currentTime.getFullYear()  }`)
+const myBirthday = new Date(`${requestMounth}/${requestDate}/${currentTime.getFullYear()  }`)
 if(currentTime > myBirthday){
     myBirthday.setFullYear(myBirthday.getFullYear()+ 1)
 }
@@ -9,7 +13,7 @@ return remained
 }
 const time = document.querySelector('#time')
 const text = document.querySelector('#text')
-text.innerText = ' Յուր ջան ծնունդիտ մնացել է '
+text.innerText = `${requestName} ծնունդիտ մնացել է `
 
 setInterval(() => {
     time.innerText = birthdayRemained()
